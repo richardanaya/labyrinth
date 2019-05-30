@@ -45,7 +45,7 @@ r=[0.0,0.0,0.0]
 s=[1.0,1.0,1.0]
 ```
 
-Not tot complex, yes? Here's some more details on what these are:
+Not too complex, yes? Here's some more details on what these are:
 
 *game_scenes.toml* - this is simply a file that keeps a version and list of known scene files.
 
