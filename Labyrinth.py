@@ -1,6 +1,7 @@
 bl_info = {
     "name": "Labyrinth",
     "category": "Import-Export",
+    "blender" : (2, 80, 0),
 }
 
 import bpy
