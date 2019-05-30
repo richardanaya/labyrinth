@@ -1,4 +1,4 @@
-# Labyrinth
+# Labyrinth 🏯
 
 Looking for an generic scene editor for your game? Labyrinth allows you to take your 3d models, position them into a scene, and then export their names, position, location, and rotation to a simple file format to use in your game engine. Here's an example of the files this addon generates:
 
