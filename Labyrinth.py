@@ -4,14 +4,33 @@ bl_info = {
 }
 
 import bpy
+import os
+
+def write_generic_game_scene(collection,filePath):
+    scene_file = open(filePath, "w")
+    scene_file.write("name=\"{0}\"\n".format(collection.name))
+    for o in collection.objects:
+        scene_file.write("[{0}]\n".format(o.name))
+        scene_file.write("position=[{0},{1},{2}]\n".format(o.position.x,o.position.y,o.position.z))
+    scene_file.close()
+    
 
 def write_generic_game_scenes(filePath):
-    print("WRITING FILE!"+filePath)
+    target_dir = os.path.dirname(filePath)
+    print(dir)
+    scenes_file = open(filePath, "w")
+    scenes_file.write("version=1\n")
+    for c in bpy.data.collections:
+        scenes_file.write("[{0}]\n".format(c.name))
+        scene_file = "scene_"+c.name.replace(" ","_")+".toml"
+        scenes_file.write("file=\"{0}\"\n".format(scene_file))
+        write_generic_game_scene(c,os.path.join(target_dir,scene_file))
+    scenes_file.close()
 
 class GenericGameScenesExport(bpy.types.Operator):
     """Export Generic Game Scenes"""
     bl_idname = "object.export_generic_game_scenes"
-    bl_label = "Generic Game Scene (.toml)"
+    bl_label = "Generic Game Scenes (.toml)"
     bl_options = {'REGISTER'}
     filepath = bpy.props.StringProperty(subtype="FILE_PATH")
     filename = bpy.props.StringProperty()
