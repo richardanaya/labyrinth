@@ -1,6 +1,6 @@
 # Labyrinth 🏯
 
-Looking for an generic scene editor for your game? Labyrinth allows you to take your 3d models, position them into a scene, and then export their names, position, location, and rotation to a simple file format to use in your game engine. 
+Looking for a generic scene editor for your game? Labyrinth allows you to take your 3d models, position them into a scene, and then export their names, position, location, and rotation to a simple file format to use in your game engine. 
 
 ![Game scenes export example](example.png)
 
