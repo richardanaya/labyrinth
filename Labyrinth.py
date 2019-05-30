@@ -12,7 +12,10 @@ def write_generic_game_scene(collection,filePath):
     scene_file.write("name=\"{0}\"\n".format(collection.name))
     for o in collection.objects:
         scene_file.write("[{0}]\n".format(o.name))
-        scene_file.write("position=[{0},{1},{2}]\n".format(o.position.x,o.position.y,o.position.z))
+        scene_file.write("t=\"{0}\"\n".format(o.data.name))
+        scene_file.write("p=[{0},{1},{2}]\n".format(o.location.x,o.location.y,o.location.z))
+        scene_file.write("r=[{0},{1},{2}]\n".format(o.rotation_euler.x,o.rotation_euler.y,o.rotation_euler.z))
+        scene_file.write("s=[{0},{1},{2}]\n".format(o.scale.x,o.scale.y,o.scale.z))
     scene_file.close()
     
 
